@@ -14,6 +14,10 @@ model_columns = joblib.load('model_columns.pkl')
 
 st.markdown("""
 <style>
+[data-testid="stSidebarCollapseButton"] {
+    display: none !important;
+}
+                      
 [data-testid="stSidebar"] {
     background: linear-gradient(180deg, #2D1B69 0%, #11047A 100%);
 }
