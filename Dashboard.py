@@ -48,7 +48,7 @@ show_sidebar()
 col1, col2 = st.columns([3, 1])
 with col1:
     st.markdown("## Dashboard")
-    st.markdown("Welcome back, {name}! Here's an overview of your performance and future opportunities.")
+    st.markdown(f"Welcome back, {student_name}! Here's an overview of your performance.")
 
 with col2:
     st.markdown("""
