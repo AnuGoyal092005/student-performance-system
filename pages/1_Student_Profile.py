@@ -1,5 +1,8 @@
 import streamlit as st
 import pandas as pd
+from utils.styles import load_styles
+from utils.toggle import mobile_toggle
+from utils.sidebar import show_sidebar
 
 st.set_page_config(
     page_title="Student Profile",
@@ -7,62 +10,9 @@ st.set_page_config(
     layout="wide"
 )
 
-st.markdown("""
-<style>
-[data-testid="stSidebarCollapseButton"] {
-    display: none !important;
-}
-            
-[data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #2D1B69 0%, #11047A 100%);
-}
-[data-testid="stSidebar"] * {
-    color: white !important;
-}
-#MainMenu, footer, header {
-    visibility: hidden;
-}
-.stApp {
-    background: #F4F7FE;
-}
-[data-testid="stSidebar"] .stButton > button {
-    background: transparent !important;
-    border: none !important;
-    color: white !important;
-    text-align: left !important;
-    font-size: 15px !important;
-    padding: 8px 15px !important;
-    border-radius: 8px !important;
-}
-
-[data-testid="stSidebar"] .stButton > button:hover {
-    background: rgba(255,255,255,0.15) !important;
-}
-[data-testid="stSidebarNav"] {
-    display: none !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-with st.sidebar:
-    st.markdown("## 👤 Student Profile")
-    st.markdown("Fill in your details below. This information will be used for performance prediction.")
-    st.markdown("---")
-    if st.button("🏠 Dashboard", use_container_width=True):
-        st.switch_page("Dashboard.py")
-    
-    if st.button("👤 Student Profile", use_container_width=True):
-        st.switch_page("pages/1_Student_Profile.py")
-    
-    if st.button("📊 Predict Performance", use_container_width=True):
-        st.switch_page("pages/2_Predict_Performance.py")
-    
-    if st.button("🎯 Career Recommendation", use_container_width=True):
-        st.switch_page("pages/3_Career_Recommendation.py")
-    
-    if st.button("ℹ️ About Project", use_container_width=True):
-        st.switch_page("pages/4_About_Project.py")
-
+load_styles()
+mobile_toggle()
+show_sidebar()
 col1, col2 = st.columns(2)
 with col1:
     st.markdown("#### 📋 Personal Information")
