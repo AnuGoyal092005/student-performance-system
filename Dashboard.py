@@ -56,7 +56,6 @@ with col2:
         <img src='https://www.w3schools.com/howto/img_avatar.png' 
              width='45' style='border-radius:50%; vertical-align:middle;'>
         &nbsp;
-        <b style='color:#2D1B69; font-size:15px;'>John Doe</b><br>
         <span style='color:grey; font-size:12px; margin-right:5px;'>Student</span>
     </div>
     """, unsafe_allow_html=True)
