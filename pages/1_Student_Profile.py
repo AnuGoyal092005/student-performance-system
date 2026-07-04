@@ -63,7 +63,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.markdown("#### 📋 Personal Information")
     name = st.text_input("Full Name", placeholder="Enter your name")
-    age = st.number_input("Age", min_value=14, max_value=20, value=16, step=1)
+    age = st.number_input("Age", min_value=14, max_value=35, value=14, step=1)
     gender = st.radio("Gender", options=["Male", "Female"], horizontal=True)
     parental_education = st.selectbox("Parental Education Level", 
         options=[0, 1, 2, 3, 4],

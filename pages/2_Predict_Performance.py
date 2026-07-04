@@ -110,6 +110,7 @@ student_data = {
 input_df = pd.DataFrame([student_data])[model_columns]
 predicted_gpa = model.predict(input_df)[0]
 predicted_gpa = round(max(0, min(4, predicted_gpa)), 2)
+st.session_state['predicted_gpa'] = predicted_gpa
 predicted_percentage = round((predicted_gpa / 4) * 100, 1)
 if predicted_gpa >= 3.5:
     grade = "A"

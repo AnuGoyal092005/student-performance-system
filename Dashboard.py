@@ -191,16 +191,18 @@ if 'study_time' in st.session_state:
     interest_arts = st.session_state['interest_arts']
     interest_social = st.session_state['interest_social']
 
+    gpa = st.session_state.get('predicted_gpa', 2.0)
+
     career_scores = {
-        'Software Developer': (interest_coding * 3 + interest_science) / 4 * 10,
-        'Data Scientist': (interest_coding * 2 + interest_science * 2) / 4 * 10,
-        'AI / ML Engineer': (interest_coding * 2 + interest_science * 2) / 4 * 10 - 2,
-        'Business Analyst': (interest_business * 3 + interest_coding) / 4 * 10,
-        'Doctor / Healthcare': (interest_science * 3 + interest_social) / 4 * 10,
-        'Teacher / Educator': (interest_social * 3 + volunteering * 5) / 4 * 10,
-        'Artist / Designer': (interest_arts * 3 + music * 5) / 4 * 10,
-        'Entrepreneur': (interest_business * 2 + interest_coding * 2) / 4 * 10,
-    }
+    'Software Developer': (interest_coding * 0.5 + interest_science * 0.3 + gpa * 0.2),
+    'Data Scientist': (interest_coding * 0.4 + interest_science * 0.4 + gpa * 0.2),
+    'AI / ML Engineer': (interest_coding * 0.3 + interest_science * 0.5 + gpa * 0.2),
+    'Business Analyst': (interest_business * 0.5 + interest_coding * 0.3 + gpa * 0.2),
+    'Doctor / Healthcare': (interest_science * 0.6 + interest_social * 0.2 + gpa * 0.2),
+    'Teacher / Educator': (interest_social * 0.5 + interest_science * 0.3 + gpa * 0.2),
+    'Artist / Designer': (interest_arts * 0.7 + interest_social * 0.1 + gpa * 0.2),
+    'Entrepreneur': (interest_business * 0.6 + interest_coding * 0.2 + gpa * 0.2),
+}
 
     sorted_careers = sorted(career_scores.items(), key=lambda x: x[1], reverse=True)
     top_3 = sorted_careers[:3]
@@ -221,7 +223,7 @@ if 'study_time' in st.session_state:
     cols = [career1, career2, career3]
 
     for i, (career, score) in enumerate(top_3):
-        match_percent = min(round(score * 10, 1), 99)
+        match_percent = round(score * 10, 1)
         emoji = career_emojis.get(career, '🎯')
         with cols[i]:
             st.markdown(f"""
