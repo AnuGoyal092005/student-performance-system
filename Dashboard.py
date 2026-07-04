@@ -45,6 +45,22 @@ else:
 load_styles()
 mobile_toggle()
 show_sidebar()
+col1, col2 = st.columns([3, 1])
+with col1:
+    st.markdown("## Dashboard")
+    st.markdown("Welcome back, {name}! Here's an overview of your performance and future opportunities.")
+
+with col2:
+    st.markdown("""
+    <div style='text-align:right; padding:10px;'>
+        <img src='https://www.w3schools.com/howto/img_avatar.png' 
+             width='45' style='border-radius:50%; vertical-align:middle;'>
+        &nbsp;
+        <b style='color:#2D1B69; font-size:15px;'>John Doe</b><br>
+        <span style='color:grey; font-size:12px; margin-right:5px;'>Student</span>
+    </div>
+    """, unsafe_allow_html=True)
+    
 st.markdown("---")
 card1, card2=st.columns(2)
 
