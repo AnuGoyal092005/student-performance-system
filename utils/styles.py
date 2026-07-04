@@ -1,3 +1,4 @@
+import streamlit as st
 st.markdown("""
 <style>
 @media (min-width:769px){
