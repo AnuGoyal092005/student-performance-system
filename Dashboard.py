@@ -10,7 +10,7 @@ st.set_page_config(
     page_title="Student Performance System",
     page_icon="🎓",
     layout="wide",
-    initial_sidebar_state="collapsed"  # Mobile ke liye collapsed
+     initial_sidebar_state="expanded"
 )
 model=joblib.load("gpa_model.pkl")
 model_columns=joblib.load("model_columns.pkl")
