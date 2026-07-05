@@ -10,16 +10,6 @@ def load_styles():
     }
 }
 
-/* Mobile pe collapsedControl button dikhao */
-@media (max-width: 767px) {
-    [data-testid="collapsedControl"] {
-        display: flex !important;
-        background: #2D1B69 !important;
-        color: white !important;
-        border-radius: 0 8px 8px 0 !important;
-        padding: 10px !important;
-    }
-}
     [data-testid="stSidebar"] {
         background: linear-gradient(180deg, #2D1B69 0%, #11047A 100%);
     }
@@ -42,7 +32,10 @@ def load_styles():
     [data-testid="stSidebar"] .stButton > button:hover {
         background: rgba(255,255,255,0.15) !important;
     }
-    #MainMenu, footer, header { visibility: hidden; }
+   #MainMenu,
+footer {
+    visibility: hidden;
+}
     .stApp { background: #F4F7FE; }
     </style>
     """, unsafe_allow_html=True)
