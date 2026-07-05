@@ -1,6 +1,5 @@
 import streamlit as st
 from utils.styles import load_styles
-from utils.toggle import mobile_toggle
 from utils.sidebar import show_sidebar
 
 
@@ -11,7 +10,6 @@ st.set_page_config(
 )
 
 load_styles()
-mobile_toggle()
 show_sidebar()
 
 st.markdown("## ℹ️ About This Project")
