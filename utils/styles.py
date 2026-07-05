@@ -10,21 +10,14 @@ def load_styles():
     }
 }
 
-/* Mobile pe >> button dikhao */
-@media (max-width: 767px) {
-    [data-testid="stSidebarCollapseButton"] {
-        display: flex !important;
-        background: rgba(255,255,255,0.2) !important;
-        border-radius: 8px !important;
-    }
-}
-
-/* Mobile pe sidebar band hone ke baad open button dikhao */
+/* Mobile pe collapsedControl button dikhao */
 @media (max-width: 767px) {
     [data-testid="collapsedControl"] {
         display: flex !important;
         background: #2D1B69 !important;
         color: white !important;
+        border-radius: 0 8px 8px 0 !important;
+        padding: 10px !important;
     }
 }
     [data-testid="stSidebar"] {
