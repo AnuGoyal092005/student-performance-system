@@ -3,7 +3,6 @@ import pandas as pd
 import joblib
 import plotly.graph_objects as go
 from utils.styles import load_styles
-from utils.toggle import mobile_toggle
 from utils.sidebar import show_sidebar
 
 st.set_page_config(
@@ -42,7 +41,6 @@ else:
     student_name = "Student"
 
 load_styles()
-mobile_toggle()
 show_sidebar()
 col1, col2 = st.columns([3, 1])
 with col1:
