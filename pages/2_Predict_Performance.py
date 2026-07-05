@@ -3,7 +3,6 @@ import pandas as pd
 import joblib
 import plotly.graph_objects as go
 from utils.styles import load_styles
-from utils.toggle import mobile_toggle
 from utils.sidebar import show_sidebar
 
 st.set_page_config(
@@ -16,7 +15,6 @@ model = joblib.load('gpa_model.pkl')
 model_columns = joblib.load('model_columns.pkl')
 
 load_styles()
-mobile_toggle()
 show_sidebar()
 
 st.markdown("## 📊 Predict Performance")
