@@ -19,6 +19,7 @@ def load_styles():
     [data-testid="stSidebarUserContent"] {
         position: absolute; top: 0; width: 100%; padding-top: 20px;
     }
+/* Style Sidebar Buttons */
     
     [data-testid="stSidebar"] .stButton > button {
         background: transparent !important;
