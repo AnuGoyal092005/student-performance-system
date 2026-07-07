@@ -43,7 +43,7 @@ with col2: # Everything appears in the right column.
 st.markdown("---")
 st.markdown("#### 🎯 Activities & Interests")
 
-act1, act2, act3 = st.columns(3)
+act1, act2, act3 = st.columns(3) # Creates three equal columns.
 
 with act1:
     extracurricular = st.radio("Extracurricular Activities?", options=["Yes", "No"], horizontal=True)
