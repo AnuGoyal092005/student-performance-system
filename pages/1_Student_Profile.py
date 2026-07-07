@@ -9,8 +9,8 @@ st.set_page_config( # Sets the basic configuration of the webpage.
     layout="wide" # Makes the webpage use the full width of the screen.
 )
 
-load_styles()
-show_sidebar()
+load_styles() # Calls the CSS function.
+show_sidebar() # Displays the sidebar.
 col1, col2 = st.columns(2)
 with col1:
     st.markdown("#### 📋 Personal Information")
