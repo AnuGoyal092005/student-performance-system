@@ -26,7 +26,7 @@ with col1: # Everything inside this block appears in the left column.
             3: "Bachelor's Degree",
             4: "Higher Degree"
         }[x])
-with col2:
+with col2: # Everything appears in the right column.
     st.markdown("#### 📚 Academic Details")
     study_time = st.number_input("Weekly Study Time (hours)", min_value=0, max_value=25, value=10, step=1)
     absences = st.number_input("Number of Absences", min_value=0, max_value=30, value=5, step=1)
