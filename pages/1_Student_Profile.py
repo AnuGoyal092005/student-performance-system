@@ -4,9 +4,9 @@ from utils.styles import load_styles # Imports the function load_styles() from t
 from utils.sidebar import show_sidebar # Imports the function show_sidebar().
 
 st.set_page_config( # Sets the basic configuration of the webpage.
-    page_title="Student Profile",
-    page_icon="👤",
-    layout="wide"
+    page_title="Student Profile", # Sets the browser tab title.
+    page_icon="👤", # Adds an icon to the browser tab.
+    layout="wide" # Makes the webpage use the full width of the screen.
 )
 
 load_styles()
