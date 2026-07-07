@@ -67,9 +67,9 @@ with int2:
 with int3:
     interest_social = st.number_input("Interest in Social Work (0-10)", min_value=0, max_value=10, value=5)
 st.markdown("---")
-save_col1, save_col2, save_col3 = st.columns([1, 1, 1])
+save_col1, save_col2, save_col3 = st.columns([1, 1, 1]) # Center the Save button by placing it in the middle column.
 
-with save_col2:
+with save_col2: # Everything inside appears in the center column.
     if st.button("💾 Save Profile", use_container_width=True):
         st.session_state['name'] = name
         st.session_state['age'] = age
