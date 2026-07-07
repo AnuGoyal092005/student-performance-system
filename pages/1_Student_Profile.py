@@ -15,7 +15,7 @@ col1, col2 = st.columns(2)
 with col1: # Everything inside this block appears in the left column.
     st.markdown("#### 📋 Personal Information")
     name = st.text_input("Full Name", placeholder="Enter your name") # Creates a text box., Label of the text box., Shows a hint before typing.
-    age = st.number_input("Age", min_value=14, max_value=35, value=14, step=1)
+    age = st.number_input("Age", min_value=14, max_value=35, value=14, step=1) # Creates a number input box.
     gender = st.radio("Gender", options=["Male", "Female"], horizontal=True)
     parental_education = st.selectbox("Parental Education Level", 
         options=[0, 1, 2, 3, 4],
