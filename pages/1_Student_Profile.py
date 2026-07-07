@@ -73,7 +73,7 @@ with save_col2: # Everything inside appears in the center column.
     if st.button("💾 Save Profile", use_container_width=True):
         st.session_state['name'] = name # Stores the entered name in Streamlit's session state., session_state keeps data available while the user navigates between pages.
         st.session_state['age'] = age
-        st.session_state['gender'] = 1 if gender == "Female" else 0
+        st.session_state['gender'] = 1 if gender == "Female" else 0 # Uses a conditional expression (ternary operator)., This converts the text value into a numeric value for the machine learning model.
         st.session_state['parental_education'] = parental_education
         st.session_state['study_time'] = study_time
         st.session_state['absences'] = absences
