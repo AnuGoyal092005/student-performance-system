@@ -88,4 +88,4 @@ with save_col2: # Everything inside appears in the center column.
         st.session_state['interest_business'] = interest_business
         st.session_state['interest_arts'] = interest_arts
         st.session_state['interest_social'] = interest_social
-        st.success("✅ Profile saved! Go to Predict Performance page.")
+        st.success("✅ Profile saved! Go to Predict Performance page.") # Displays a green success message after the profile is saved.
