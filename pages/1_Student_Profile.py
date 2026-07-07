@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st /* Imports the Streamlit library., as st creates a short name (st) so we don't have to write streamlit every time. */
 import pandas as pd
 from utils.styles import load_styles
 from utils.sidebar import show_sidebar
