@@ -56,7 +56,7 @@ with act2:
 with act3:
     interest_coding = st.number_input("Interest in Coding (0-10)", min_value=0, max_value=10, value=5)
     interest_science = st.number_input("Interest in Science (0-10)", min_value=0, max_value=10, value=5)
-int1, int2, int3 = st.columns(3)
+int1, int2, int3 = st.columns(3) # Creates another row with three columns.
 
 with int1:
     interest_business = st.number_input("Interest in Business (0-10)", min_value=0, max_value=10, value=5)
