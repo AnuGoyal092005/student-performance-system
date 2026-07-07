@@ -17,9 +17,9 @@ with col1: # Everything inside this block appears in the left column.
     name = st.text_input("Full Name", placeholder="Enter your name") # Creates a text box., Label of the text box., Shows a hint before typing.
     age = st.number_input("Age", min_value=14, max_value=35, value=14, step=1) # Creates a number input box.
     gender = st.radio("Gender", options=["Male", "Female"], horizontal=True)
-    parental_education = st.selectbox("Parental Education Level", 
+    parental_education = st.selectbox("Parental Education Level", # Creates a dropdown.
         options=[0, 1, 2, 3, 4],
-        format_func=lambda x: {
+        format_func=lambda x: { # Lambda Function --> A lambda function is a short, anonymous function., Here it converts numbers into readable text.
             0: "No Education",
             1: "High School",
             2: "Some College", 
