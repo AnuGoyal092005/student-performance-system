@@ -3,7 +3,7 @@ import pandas as pd # Imports the Pandas library., pd is the short name., Althou
 from utils.styles import load_styles # Imports the function load_styles() from the styles.py file inside the utils folder.
 from utils.sidebar import show_sidebar # Imports the function show_sidebar().
 
-st.set_page_config(
+st.set_page_config( # Sets the basic configuration of the webpage.
     page_title="Student Profile",
     page_icon="👤",
     layout="wide"
