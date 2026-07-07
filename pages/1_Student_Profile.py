@@ -1,6 +1,6 @@
 import streamlit as st  # Imports the Streamlit library., as st creates a short name (st) so we don't have to write streamlit every time.
 import pandas as pd # Imports the Pandas library., pd is the short name., Although this file does not use Pandas directly, it is commonly imported for handling datasets.
-from utils.styles import load_styles
+from utils.styles import load_styles # Imports the function load_styles() from the styles.py file inside the utils folder.
 from utils.sidebar import show_sidebar
 
 st.set_page_config(
