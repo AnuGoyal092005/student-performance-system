@@ -71,7 +71,7 @@ save_col1, save_col2, save_col3 = st.columns([1, 1, 1]) # Center the Save button
 
 with save_col2: # Everything inside appears in the center column.
     if st.button("💾 Save Profile", use_container_width=True):
-        st.session_state['name'] = name
+        st.session_state['name'] = name # Stores the entered name in Streamlit's session state., session_state keeps data available while the user navigates between pages.
         st.session_state['age'] = age
         st.session_state['gender'] = 1 if gender == "Female" else 0
         st.session_state['parental_education'] = parental_education
