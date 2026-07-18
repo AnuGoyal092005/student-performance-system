@@ -17,11 +17,11 @@ model_columns = joblib.load('model_columns.pkl') # Loads the column names used w
 load_styles()
 show_sidebar()
 
-st.markdown("## 📊 Predict Performance")
-st.markdown("Your predicted academic performance based on saved profile.")
+st.markdown("## 📊 Predict Performance") # Displays the page title.
+st.markdown("Your predicted academic performance based on saved profile.") # Displays a short description.
 st.markdown("---")
 
-if 'study_time' not in st.session_state:
+if 'study_time' not in st.session_state: # Checks whether the profile page has been completed. Why only study_time?-->Because if study_time exists, the rest of the profile is expected to be saved as well.
     st.warning("⚠️ Please fill your Student Profile first!")
     st.stop()
 study_time = st.session_state['study_time']
