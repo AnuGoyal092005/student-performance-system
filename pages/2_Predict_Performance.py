@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 model = joblib.load('gpa_model.pkl')
-model_columns = joblib.load('model_columns.pkl')
+model_columns = joblib.load('model_columns.pkl') # Loads the column names used while training.
 
 load_styles()
 show_sidebar()
