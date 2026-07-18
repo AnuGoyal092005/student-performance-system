@@ -44,10 +44,10 @@ career_scores = { # Creates a dictionary. Each career gets a score.
 }
 
 sorted_careers = sorted(career_scores.items(), key=lambda x: x[1], reverse=True) # sorted_careers = sorted(--> Sorts careers according to score. career_scores.items()--> Returns--> career, score (pair). key=lambda x:x[1]--> Sort using the second value. reverse=True--> Highest score first.
-top_3 = sorted_careers[:3]
-best_career = top_3[0][0]
+top_3 = sorted_careers[:3] # Gets the first three careers.
+best_career = top_3[0][0] # Gets only the name of the highest-ranked career.
 
-career_info = {
+career_info = { # Stores details of every career.
     'Software Developer': {
         'emoji': '💻',
         'desc': 'Design, develop and maintain software applications.',
@@ -111,13 +111,13 @@ st.markdown("Based on your interests and academic profile:")
 st.write("")
 
 col1, col2, col3 = st.columns(3)
-cols = [col1, col2, col3]
+cols = [col1, col2, col3] # Stores the columns in a list. This allows the loop to place each career card in the correct column.
 
-for i, (career, score) in enumerate(top_3):
-    info = career_info[career]
-    match_percent = round(score * 10, 1)
+for i, (career, score) in enumerate(top_3): # enumerate()--> Returns both: index, value 
+    info = career_info[career] # Gets all information about that career.
+    match_percent = round(score * 10, 1) # Converts score into percentage.
     
-    with cols[i]:
+    with cols[i]: # Displays each career card inside its column.
         st.markdown(f"""
         <div style='background:white; padding:25px; border-radius:15px;
                     box-shadow:0 2px 10px rgba(0,0,0,0.08);
@@ -138,34 +138,34 @@ for i, (career, score) in enumerate(top_3):
 st.markdown("---")
 st.markdown("### 📊 All Career Match Scores")
 
-all_careers = list(career_scores.keys())
-all_scores = [round(min(s * 10, 99), 1) for s in career_scores.values()]
-colors = [career_info[c]['color'] for c in all_careers]
+all_careers = list(career_scores.keys()) # Gets all career names.
+all_scores = [round(min(s * 10, 99), 1) for s in career_scores.values()] # all_scores=[--> Converts scores into percentages. min(s*10,99)--> Limits the maximum value to 99%. 
+colors = [career_info[c]['color'] for c in all_careers] # colors=[--> Gets each career's color. 
 
-bar_fig = go.Figure(go.Bar(
-    x=all_careers,
-    y=all_scores,
-    marker_color=colors,
-    text=all_scores,
-    textposition='outside'
+bar_fig = go.Figure(go.Bar( # go.Bar(--> Creates a bar chart. 
+    x=all_careers, # x=all_careers--> Career names on the X-axis.
+    y=all_scores, # y=all_scores--> Scores on the Y-axis.
+    marker_color=colors, # marker_color=colors--> Different color for every bar.
+    text=all_scores, # text=all_scores--> Shows the percentage on top of each bar.
+    textposition='outside' # textposition='outside'--> Places the percentage above the bar.
 ))
 
-bar_fig.update_layout(
+bar_fig.update_layout( # Adjusts chart appearance.
     height=400,
     margin=dict(l=20, r=20, t=30, b=100),
     paper_bgcolor='white',
     plot_bgcolor='white',
-    yaxis=dict(range=[0, 110]),
-    xaxis=dict(tickangle=-20),
-    showlegend=False
+    yaxis=dict(range=[0, 110]), # Y-axis from 0 to 110.
+    xaxis=dict(tickangle=-20), # Tilts labels so long career names fit.
+    showlegend=False # Hides the legend.
 )
 
-st.plotly_chart(bar_fig, use_container_width=True)
+st.plotly_chart(bar_fig, use_container_width=True) # Displays the interactive bar chart.
 
 
 st.markdown("---")
-best_info = career_info[best_career]
-st.markdown(f"""
+best_info = career_info[best_career] # Gets complete information about the best career.
+st.markdown(f""" # Creates a large highlighted card. Displays--> Trophy, Career emoji, Best career name, Description, Salary, Skills This is the final recommendation shown to the student.
 <div style='background: linear-gradient(135deg, #2D1B69, #11047A);
             padding:30px; border-radius:15px; color:white; text-align:center;'>
     <h2>🏆 Your Best Career Match</h2>
