@@ -52,7 +52,7 @@ student_data = {
     'Volunteering': volunteering
 }
 
-input_df = pd.DataFrame([student_data])[model_columns]
+input_df = pd.DataFrame([student_data])[model_columns] # [student_data]--> Makes a list containing one dictionary. pd.DataFrame(...)--> Converts it into a DataFrame. [model_columns]--> Reorders columns exactly like the training dataset. This prevents prediction errors.
 predicted_gpa = model.predict(input_df)[0]
 predicted_gpa = round(max(0, min(4, predicted_gpa)), 2)
 st.session_state['predicted_gpa'] = predicted_gpa
