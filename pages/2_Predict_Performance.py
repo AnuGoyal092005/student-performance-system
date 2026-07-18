@@ -36,7 +36,7 @@ extracurricular = st.session_state['extracurricular']
 sports = st.session_state['sports']
 music = st.session_state['music']
 volunteering = st.session_state['volunteering']
-name = st.session_state.get('name', 'Student')
+name = st.session_state.get('name', 'Student') # .get() safely reads a value. This prevents a KeyError.
 student_data = {
     'Age': age,
     'Gender': gender,
