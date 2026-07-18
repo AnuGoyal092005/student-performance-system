@@ -28,11 +28,11 @@ interest_science = st.session_state['interest_science']
 interest_business = st.session_state['interest_business']
 interest_arts = st.session_state['interest_arts']
 interest_social = st.session_state['interest_social']
-name = st.session_state.get('name', 'Student')
+name = st.session_state.get('name', 'Student') # Gets the student's name. If no name exists, Default: Student
 
-gpa = st.session_state.get('predicted_gpa', 2.0)
+gpa = st.session_state.get('predicted_gpa', 2.0) # Gets the predicted GPA. If prediction hasn't happened, Default GPA:2.0
 
-career_scores = {
+career_scores = { # Creates a dictionary. Each career gets a score.
     'Software Developer': (interest_coding * 0.5 + interest_science * 0.3 + gpa * 0.2),
     'Data Scientist': (interest_coding * 0.4 + interest_science * 0.4 + gpa * 0.2),
     'AI / ML Engineer': (interest_coding * 0.3 + interest_science * 0.5 + gpa * 0.2),
@@ -43,7 +43,7 @@ career_scores = {
     'Entrepreneur': (interest_business * 0.6 + interest_coding * 0.2 + gpa * 0.2),
 }
 
-sorted_careers = sorted(career_scores.items(), key=lambda x: x[1], reverse=True)
+sorted_careers = sorted(career_scores.items(), key=lambda x: x[1], reverse=True) # sorted_careers = sorted(--> Sorts careers according to score. career_scores.items()--> Returns--> career, score (pair). key=lambda x:x[1]--> Sort using the second value. reverse=True--> Highest score first.
 top_3 = sorted_careers[:3]
 best_career = top_3[0][0]
 
