@@ -40,7 +40,7 @@ name = st.session_state.get('name', 'Student') # .get() safely reads a value. Th
 student_data = {
     'Age': age,
     'Gender': gender,
-    'Ethnicity': 0,
+    'Ethnicity': 0, # Your model expects this feature. Since the user doesn't enter ethnicity, it is fixed at 0.
     'ParentalEducation': parental_education,
     'StudyTimeWeekly': study_time,
     'Absences': absences,
