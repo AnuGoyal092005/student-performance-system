@@ -16,19 +16,19 @@ st.markdown("## ℹ️ About This Project")
 st.markdown("---")
 
 # Project Overview
-st.markdown("""
-<div style='background:white; padding:30px; border-radius:15px;
-            box-shadow:0 2px 10px rgba(0,0,0,0.08);'>
-    <h3 style='color:#2D1B69;'>🎯 Project Overview</h3>
-    <p style='color:grey; font-size:15px; line-height:1.8;'>
+st.markdown(""" # Uses Markdown with HTML.
+<div style='background:white; padding:30px; border-radius:15px; # <div style='background:white;--> Creates a white card. padding:30px;--> Adds space inside the card. border-radius:15px;--> Rounds the corners.
+            box-shadow:0 2px 10px rgba(0,0,0,0.08);'> # Adds a shadow around the card.
+    <h3 style='color:#2D1B69;'>🎯 Project Overview</h3> # </h3>--> Displays a heading.
+    <p style='color:grey; font-size:15px; line-height:1.8;'> # <p>--> Displays a paragraph. It explains: AI predicts student performance. Machine Learning is used. Career recommendations are given based on interests.
         This AI-powered system predicts student academic performance using 
         Machine Learning and recommends suitable career paths based on 
         interests and academic profile.
     </p>
 </div>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True) # Allows Streamlit to render HTML and CSS. Without it, HTML tags like <div> or <h3> would appear as plain text.
 
-st.write("")
+st.write("") # Adds an empty line between sections.
 
 # 3 Info Cards
 c1, c2, c3 = st.columns(3)
@@ -37,7 +37,7 @@ with c1:
     st.markdown("""
     <div style='background:white; padding:25px; border-radius:15px;
                 box-shadow:0 2px 10px rgba(0,0,0,0.08);
-                border-top:4px solid #4299E1;'>
+                border-top:4px solid #4299E1;'> # Makes the card visually attractive.
         <h4 style='color:#2D1B69;'>🤖 ML Model Used</h4>
         <p style='color:grey; font-size:14px;'>Linear Regression trained on 2392 student records with 95.3% R² accuracy.</p>
     </div>
@@ -113,10 +113,10 @@ with w4:
 
 st.write("")
 st.markdown("---")
-st.markdown("""
+st.markdown(""" # Creates a Light Blue information box.
 <div style='background:#EBF8FF; padding:15px; border-radius:10px; color:#2B6CB0; font-size:13px;'>
     💡 This project demonstrates the use of Machine Learning in Education Technology (EdTech) 
     to provide personalized academic guidance and career counseling to students.
 </div>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True) # Allows HTML formatting.
 
