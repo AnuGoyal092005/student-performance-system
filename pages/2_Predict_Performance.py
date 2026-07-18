@@ -54,8 +54,8 @@ student_data = {
 
 input_df = pd.DataFrame([student_data])[model_columns] # [student_data]--> Makes a list containing one dictionary. pd.DataFrame(...)--> Converts it into a DataFrame. [model_columns]--> Reorders columns exactly like the training dataset. This prevents prediction errors.
 predicted_gpa = model.predict(input_df)[0] # [0] gets the first prediction.
-predicted_gpa = round(max(0, min(4, predicted_gpa)), 2)
-st.session_state['predicted_gpa'] = predicted_gpa
+predicted_gpa = round(max(0, min(4, predicted_gpa)), 2) # min(4, predicted_gpa)--> If GPA is greater than 4, 4.5-->4, max(0, value)--> If GPA becomes negative, -0.4-->0
+st.session_state['predicted_gpa'] = predicted_gpa # Stores GPA so another page can use it.
 predicted_percentage = round((predicted_gpa / 4) * 100, 1)
 if predicted_gpa >= 3.5:
     grade = "A"
@@ -109,24 +109,24 @@ with r3:
         <h1 style='color:{grade_color}; margin:10px 0;'>{grade}</h1>
         <p style='color:grey; font-size:12px; margin:0;'>{tier}</p>
     </div>
-    """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True) # they contain HTML and CSS for custom styling., unsafe_allow_html=True allows Streamlit to render HTML tags such as <div>, <p>, and <h1>.
 
 st.markdown("---")
 g_col, info_col = st.columns([1, 1])
 
 with g_col:
     st.markdown("#### 🎯 GPA Gauge")
-    fig = go.Figure(go.Indicator(
+    fig = go.Figure(go.Indicator( # fig = go.Figure(--> Creates a new Plotly figure., go.Indicator(--> Creates a gauge indicator.
         mode="gauge+number",
-        value=predicted_gpa,
+        value=predicted_gpa, # Needle points to the predicted GPA.
         number={'suffix': " / 4.0", 'font': {'size': 36, 'color': '#4299E1'}},
         gauge={
             'axis': {'range': [0, 4]},
-            'bar': {'color': grade_color},
+            'bar': {'color': grade_color}, # Gauge needle color depends on grade.
             'steps': [
-                {'range': [0, 2], 'color': '#FED7D7'},
-                {'range': [2, 3], 'color': '#FEFCBF'},
-                {'range': [3, 4], 'color': '#C6F6D5'}
+                {'range': [0, 2], 'color': '#FED7D7'}, # Red
+                {'range': [2, 3], 'color': '#FEFCBF'}, # Yellow
+                {'range': [3, 4], 'color': '#C6F6D5'} # Green
             ],
         },
         title={'text': "Predicted GPA", 'font': {'size': 14, 'color': 'grey'}}
@@ -136,7 +136,7 @@ with g_col:
         margin=dict(l=20, r=20, t=50, b=20),
         paper_bgcolor='white'
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True) # Displays the chart.
 
 with info_col:
     st.markdown("#### 📋 Performance Summary")
@@ -154,9 +154,9 @@ with info_col:
     """, unsafe_allow_html=True)
 
     if predicted_gpa >= 3.5:
-        st.balloons()
+        st.balloons() # Shows balloon animation.
         st.success("🎉 Outstanding! Keep up the excellent work!")
     elif predicted_gpa >= 2.5:
-        st.info("📚 Good progress! A little more effort can take you to the top.")
+        st.info("📚 Good progress! A little more effort can take you to the top.") # Shows an informational message encouraging improvement.
     else:
-        st.warning("⚠️ Focus on reducing absences and increasing study time.")
+        st.warning("⚠️ Focus on reducing absences and increasing study time.") # Shows a warning suggesting the student reduce absences and increase study time.
