@@ -24,6 +24,7 @@ st.markdown("---")
 if 'study_time' not in st.session_state: # Checks whether the profile page has been completed. Why only study_time?-->Because if study_time exists, the rest of the profile is expected to be saved as well.
     st.warning("⚠️ Please fill your Student Profile first!")
     st.stop() # Stops the app immediately. Nothing below this line runs.
+# All these lines retrieve previously saved user inputs.
 study_time = st.session_state['study_time']
 absences = st.session_state['absences']
 age = st.session_state['age']
