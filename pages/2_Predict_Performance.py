@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import plotly.graph_objects as go
+import plotly.graph_objects as go # Imports Plotly Graph Objects. Purpose--> Create interactive charts. Here it is used for the GPA Gauge.
 from utils.styles import load_styles
 from utils.sidebar import show_sidebar
 
