@@ -1,5 +1,5 @@
-import streamlit as st
-import pandas as pd
+import streamlit as st # Imports the Streamlit library to build the web application. Used for:Buttons, Text, Columns, Charts, Messages
+import pandas as pd # Imports the Pandas library. Although it is not used in this file, it is commonly imported for handling data.
 import plotly.graph_objects as go
 from utils.styles import load_styles
 from utils.sidebar import show_sidebar
