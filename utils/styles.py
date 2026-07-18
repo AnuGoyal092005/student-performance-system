@@ -1,7 +1,7 @@
 import streamlit as st
 
-def load_styles():
-    st.markdown("""
+def load_styles(): # This function contains all the custom CSS used to style the Streamlit application.
+    st.markdown(""" # Here, we are  passing a multi-line string using triple quotes (""" ... """), which contains HTML and CSS.
     <style>
     /* Desktop pe >> button hide karo */
 @media (min-width: 768px) {
