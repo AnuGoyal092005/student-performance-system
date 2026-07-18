@@ -1,9 +1,8 @@
 import streamlit as st # Imports the Streamlit library to build the web application. Used for:Buttons, Text, Columns, Charts, Messages
 import pandas as pd # Imports the Pandas library. Although it is not used in this file, it is commonly imported for handling data.
-import plotly.graph_objects as go
-from utils.styles import load_styles
-from utils.sidebar import show_sidebar
-
+import plotly.graph_objects as go # Imports Plotly Graph Objects. Here it is used to create the career match bar chart.
+from utils.styles import load_styles # Imports the custom CSS function.
+from utils.sidebar import show_sidebar # Imports the sidebar navigation.
 
 st.set_page_config(
     page_title="Career Recommendation",
