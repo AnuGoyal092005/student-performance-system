@@ -28,9 +28,9 @@ st.markdown("""
         interests and academic profile.
     </p>
 </div>
-""", unsafe_allow_html=True) <!-- Allows Streamlit to render HTML and CSS. Without it, HTML tags like <div> or <h3> would appear as plain text. -->
+""", unsafe_allow_html=True) # Allows Streamlit to render HTML and CSS. Without it, HTML tags like <div> or <h3> would appear as plain text. 
 
-st.write("") <!-- Adds an empty line between sections. -->
+st.write("") # Adds an empty line between sections.
 
 # 3 Info Cards
 c1, c2, c3 = st.columns(3)
@@ -115,7 +115,8 @@ with w4:
 
 st.write("")
 st.markdown("---")
-st.markdown(""" # Creates a Light Blue information box.
+# Creates a Light Blue information box.
+st.markdown(""" 
 <div style='background:#EBF8FF; padding:15px; border-radius:10px; color:#2B6CB0; font-size:13px;'>
     💡 This project demonstrates the use of Machine Learning in Education Technology (EdTech) 
     to provide personalized academic guidance and career counseling to students.
