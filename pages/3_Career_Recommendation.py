@@ -165,7 +165,8 @@ st.plotly_chart(bar_fig, use_container_width=True) # Displays the interactive ba
 
 st.markdown("---")
 best_info = career_info[best_career] # Gets complete information about the best career.
-st.markdown(f""" # Creates a large highlighted card. Displays--> Trophy, Career emoji, Best career name, Description, Salary, Skills This is the final recommendation shown to the student.
+# Creates a large highlighted card. Displays--> Trophy, Career emoji, Best career name, Description, Salary, Skills This is the final recommendation shown to the student.
+st.markdown(f"""
 <div style='background: linear-gradient(135deg, #2D1B69, #11047A);
             padding:30px; border-radius:15px; color:white; text-align:center;'>
     <h2>🏆 Your Best Career Match</h2>
