@@ -17,8 +17,8 @@ st.markdown("---")
 
 # Project Overview
 # Uses Markdown with HTML.
+# div style='background:white;--> Creates a white card. padding:30px;--> Adds space inside the card. border-radius:15px;--> Rounds the corners.
 st.markdown(""" 
-<!-- div style='background:white;--> Creates a white card. padding:30px;--> Adds space inside the card. border-radius:15px;--> Rounds the corners. -->
 <div style='background:white; padding:30px; border-radius:15px; 
             box-shadow:0 2px 10px rgba(0,0,0,0.08);'> <!-- Adds a shadow around the card. -->
     <h3 style='color:#2D1B69;'>🎯 Project Overview</h3> <!-- </h3>--> Displays a heading. -->
