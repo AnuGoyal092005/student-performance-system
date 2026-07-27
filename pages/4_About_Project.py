@@ -19,11 +19,12 @@ st.markdown("---")
 # Uses Markdown with HTML.
 # div style='background:white;--> Creates a white card. padding:30px;--> Adds space inside the card. border-radius:15px;--> Rounds the corners.
 # </h3>--> Displays a heading.
+# <p>--> Displays a paragraph. It explains: AI predicts student performance. Machine Learning is used. Career recommendations are given based on interests.
 st.markdown(""" 
 <div style='background:white; padding:30px; border-radius:15px; 
             box-shadow:0 2px 10px rgba(0,0,0,0.08);'> <!-- Adds a shadow around the card. -->
     <h3 style='color:#2D1B69;'>🎯 Project Overview</h3> 
-    <p style='color:grey; font-size:15px; line-height:1.8;'> <!-- <p>--> Displays a paragraph. It explains: AI predicts student performance. Machine Learning is used. Career recommendations are given based on interests. -->
+    <p style='color:grey; font-size:15px; line-height:1.8;'> 
         This AI-powered system predicts student academic performance using 
         Machine Learning and recommends suitable career paths based on 
         interests and academic profile.
