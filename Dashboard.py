@@ -126,15 +126,50 @@ if 'study_time' in st.session_state:
 
     gpa = st.session_state.get('predicted_gpa', 2.0)
 
+    # Convert GPA (0–4) to the same 0–10 scale as interests
+    gpa_score = (gpa / 4.0) * 10
+
     career_scores = {
-    'Software Developer': (interest_coding * 0.5 + interest_science * 0.3 + gpa * 0.2),
-    'Data Scientist': (interest_coding * 0.4 + interest_science * 0.4 + gpa * 0.2),
-    'AI / ML Engineer': (interest_coding * 0.3 + interest_science * 0.5 + gpa * 0.2),
-    'Business Analyst': (interest_business * 0.5 + interest_coding * 0.3 + gpa * 0.2),
-    'Doctor / Healthcare': (interest_science * 0.6 + interest_social * 0.2 + gpa * 0.2),
-    'Teacher / Educator': (interest_social * 0.5 + interest_science * 0.3 + gpa * 0.2),
-    'Artist / Designer': (interest_arts * 0.7 + interest_social * 0.1 + gpa * 0.2),
-    'Entrepreneur': (interest_business * 0.6 + interest_coding * 0.2 + gpa * 0.2),
+
+    'Software Developer':
+        (interest_coding * 0.75 +
+         interest_science * 0.10 +
+         gpa_score * 0.15),
+
+    'Data Scientist':
+        (interest_coding * 0.45 +
+         interest_science * 0.40 +
+         gpa_score * 0.15),
+
+    'AI / ML Engineer':
+        (interest_coding * 0.50 +
+         interest_science * 0.35 +
+         gpa_score * 0.15),
+
+    'Business Analyst':
+        (interest_business * 0.65 +
+         interest_coding * 0.20 +
+         gpa_score * 0.15),
+
+    'Doctor / Healthcare':
+        (interest_science * 0.70 +
+         interest_social * 0.15 +
+         gpa_score * 0.15),
+
+    'Teacher / Educator':
+        (interest_social * 0.60 +
+         interest_arts * 0.10 +
+         gpa_score * 0.30),
+
+    'Artist / Designer':
+        (interest_arts * 0.80 +
+         interest_social * 0.05 +
+         gpa_score * 0.15),
+
+    'Entrepreneur':
+        (interest_business * 0.60 +
+         interest_coding * 0.25 +
+         gpa_score * 0.15),
 }
 
     sorted_careers = sorted(career_scores.items(), key=lambda x: x[1], reverse=True)
@@ -156,7 +191,8 @@ if 'study_time' in st.session_state:
     cols = [career1, career2, career3]
 
     for i, (career, score) in enumerate(top_3):
-        match_percent = round(score * 10, 1)
+        max_score = max(career_scores.values())
+        match_percent = round((score / max_score) * 100, 1)
         emoji = career_emojis.get(career, '🎯')
         with cols[i]:
             st.markdown(f"""
