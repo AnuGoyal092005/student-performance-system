@@ -3,7 +3,7 @@ import streamlit as st
 def load_styles(): /*This function contains all the custom CSS used to style the Streamlit application.*/
     st.markdown(""" /* Here, we are  passing a multi-line string using triple quotes, which contains HTML and CSS.*/
     <style> /* This starts a CSS block.*/
-@media (min-width: 768px) { # Media Query--> Apply the following CSS only if the screen width is 768 pixels or more.
+@media (min-width: 768px) { /* Media Query--> Apply the following CSS only if the screen width is 768 pixels or more.*/
     [data-testid="stSidebarCollapseButton"] { /*This selects Streamlit's sidebar collapse button (>>). data-testid is an HTML attribute used to identify elements.*/
         display: none !important; /*display: none--> Completely hide the element. !important--> Force this rule even if another style exists.*/
     }
