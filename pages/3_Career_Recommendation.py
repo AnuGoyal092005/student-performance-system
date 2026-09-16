@@ -149,8 +149,7 @@ cols = [col1, col2, col3] # Stores the columns in a list. This allows the loop t
 
 for i, (career, score) in enumerate(top_3): # enumerate()--> Returns both: index, value 
     info = career_info[career] # Gets all information about that career.
-    max_score = max(career_scores.values())
-    match_percent = round((score / max_score) * 100, 1)
+    match_percent = round(min(score * 10, 99), 1)
     
     with cols[i]: # Displays each career card inside its column.
         st.markdown(f"""
